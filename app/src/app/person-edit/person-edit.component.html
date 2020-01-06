@@ -1,0 +1,82 @@
+<div class="person__edit">
+  <div class="container">
+    <div class="person__edit__header">
+      <h1><span>Problems</span> One</h1>
+      <p>This web app was build to solve the second problem which explores the API built in Express.js.</p>
+    </div>
+    <div class="person__edit__form">
+      <form class="person__form" [formGroup]="personForm">
+        <mat-form-field>
+          <input matInput type="text" placeholder="Enter the firstname" formControlName="firstname" required>
+          <mat-error *ngIf="personForm.get('firstname')?.invalid">You must enter a value</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="Enter the lastname" formControlName="lastname" required>
+          <mat-error *ngIf="personForm.get('lastname')?.invalid">You must enter a value</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="number" placeholder="Enter the age" formControlName="age" required>
+          <mat-error *ngIf="personForm.get('age')?.invalid">You must enter a value</mat-error>
+        </mat-form-field>
+      </form>
+      <form class="person__contact__form" [formGroup]="contactForm" (ngSubmit)="addContact()">
+        <h2>
+          Add some contact of this person below
+        </h2>
+        <mat-form-field>
+          <input matInput type="text" placeholder="Enter the type" formControlName="type" required>
+          <mat-error *ngIf="contactForm.get('type')?.invalid">You must enter a value</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="Enter the info" formControlName="info" required>
+          <mat-error *ngIf="contactForm.get('info')?.invalid">You must enter a value</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="Enter the description" formControlName="description">
+          <mat-error *ngIf="contactForm.get('description')?.invalid">You must enter a value</mat-error>
+        </mat-form-field>
+
+        <button mat-button class="button__add">Add Contact</button>
+      </form>
+      <div>
+        <div class="table-responsive">
+          <table mat-table [dataSource]="dataSourceContacts" class="mat-elevation-z8">
+            <ng-container matColumnDef="type">
+              <th mat-header-cell *matHeaderCellDef> Type </th>
+              <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="info">
+              <th mat-header-cell *matHeaderCellDef> Info </th>
+              <td mat-cell *matCellDef="let element"> {{element.info}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="description">
+              <th mat-header-cell *matHeaderCellDef> Description </th>
+              <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef> Actions </th>
+              <td mat-cell *matCellDef="let element">
+                <button md-raised-button (click)="removeContact(element)" class="item__delete">Remove</button>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="person__add__buttons">
+      <button mat-button (click)="submitForm()" class="save">Save</button>
+      <button mat-button routerLink="/contacts" class="cancel">Cancel</button>
+    </div>
+
+  </div>
+</div>

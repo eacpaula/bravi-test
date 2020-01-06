@@ -1,0 +1,126 @@
+.person__add{
+  .container{
+    padding: 15px;
+    .person__add__header{
+      margin-bottom: 20px;
+      h1{
+        color: #000;
+        margin-bottom: 0px;
+        span{
+          color: #1030e0;
+        }
+      }
+      p{
+        color: #141414;
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: 500;
+      }
+    }
+    .person__add__form{
+      h2{
+        font-size: 20px;
+        font-weight: 500;
+      }
+      form{
+        &:last-child{
+          margin-left: 0px;
+          margin-top: 30px;
+        }
+      }
+      .button__add{
+        background: #fff;
+        border: 1px solid #5db019;
+        padding: 10px;
+        border-radius: 5px;
+        margin-left: 0px;
+        color: #5db019;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .mat-form-field{
+        margin-right: 24px;
+        width: 27%;
+      }
+      .table-responsive{
+        table{
+          width: 100%;
+          margin: 30px 0px;
+          box-shadow: none;
+          border: 1px solid #ddd;
+          th{
+            font-size: 18px;
+            color: #000;
+          }
+          td{
+            font-size: 16px;
+          }
+        }
+      }
+      .item__delete{
+        width: 30px;
+        height: 30px;
+        background: url(/../../assets/css/img/css_sprites.png) -10px -60px;
+        border: 0px;
+        font-size: 0px;
+      }
+
+    }
+    .person__add__buttons{
+      .save{
+        background: #5db019;
+        color: #fff;
+        padding: 10px 12px;
+        margin-right: 15px;
+        border: 0px;
+        border-radius: 5px;
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .cancel{
+        background: #b03519;
+        color: #fff;
+        padding: 10px 12px;
+        margin-right: 15px;
+        border: 0px;
+        border-radius: 5px;
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  @media(min-width:568px){
+    .person__add__header{
+      width: 50%;
+      h1{
+        font-size: 36px;
+      }
+    }
+
+  }
+  @media(max-width:568px){
+    table{
+      width: 600px !important;
+    }
+    .person__add__header{
+      h1{
+        font-size: 34px;
+      }
+    }
+    .table-responsive{
+      width: 100%;
+      overflow-y: scroll;
+      table{
+        width: 700px;
+      }
+    }
+    .mat-form-field{
+      display: block;
+    }
+    .mat-form-field{
+      width: 100% !important;
+    }
+  }
+}

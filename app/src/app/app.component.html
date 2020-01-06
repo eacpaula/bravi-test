@@ -1,0 +1,29 @@
+<div class="menu">
+  <nav>
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <div class="menu--flex">
+          <div class="menu__logo">
+            <img src="../assets/img/logo-bravi.png" alt="Bravi" title="Bravi">
+        </div>
+        <div class="menu__itens">
+            <ul>
+              <li>
+                <a mat-button routerLink="/brackets" routerLinkActive="active">
+                  Brackets
+                </a>
+              </li>
+              <li>
+                <a mat-button routerLink="/contacts" routerLinkActive="active">
+                  Contacts
+                </a>
+              </li>
+            </ul>
+        </div>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </nav>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,67 @@
+version: "3.1"
+
+services:
+    api:
+        build:
+            context: .
+            dockerfile: ./docker/ApiDockerfile
+        image: nodejs
+        container_name: api
+        depends_on:
+            - db
+        restart: unless-stopped
+        env_file: .env
+        environment:
+            - DB_USERNAME=$DB_USERNAME
+            - DB_PASSWORD=$DB_PASSWORD
+            - DB_HOSTNAME=db
+            - DB_PORT=$DB_PORT
+            - DB_DATABASE=$DB_DATABASE
+            - NODE_ENV=development
+        ports:
+            - "8000:8080"
+        volumes:
+            - ./api/:/home/node/app
+            - ./api/node_modules:/home/node/app/node_modules
+        networks:
+            - bravi-applicattion-test-network
+        command: /home/node/app/node_modules/.bin/nodemon ./bin/www
+    
+    app:
+        build:
+            context: .
+            dockerfile: ./docker/AppDockerfile
+        image: nodejs
+        container_name: app
+        depends_on:
+            - api
+        restart: unless-stopped
+        env_file: .env
+        environment:
+            - NODE_ENV=development
+        ports:
+            - "8001:4200"
+        volumes:
+            - ./app:/home/node/app
+            - ./app/node_modules:/home/node/app/node_modules
+        networks:
+            - bravi-applicattion-test-network
+
+    db:
+        image: mongo
+        container_name: db
+        restart: unless-stopped
+        env_file: .env
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=$DB_USERNAME
+            - MONGO_INITDB_ROOT_PASSWORD=$DB_PASSWORD
+        volumes:
+            - ./docker/database/mongo/data:/data/db
+        ports:
+            - "27017:27017"
+        networks:
+            - bravi-applicattion-test-network
+
+networks:
+  bravi-applicattion-test-network:
+    driver: bridge

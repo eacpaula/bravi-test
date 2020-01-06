@@ -1,0 +1,39 @@
+<div class="brackets">
+  <div class="container">
+    <div class="brackets__header">
+        <h1><span>Problem</span> One</h1>
+        <p>
+          This input use a function that takes a string of brackets as the input, and determines if the order of the
+          brackets is valid. A bracket is considered to be any one of the following characters:
+          {{"(, ), {, }, [, or ]."}}
+        </p>
+        <p>
+          We say a sequence of brackets is valid if the following conditions are met:
+        </p>
+        <ul>
+          <li>It contains no unmatched brackets.</li>
+          <li>The subset of brackets enclosed within the confines of a matched pair of brackets is
+            also a matched pair of brackets.</li>
+        </ul>
+        <p>
+          Example:
+        </p>
+        <ul>
+          <li>{{"(){}[]"}} is valid</li>
+          <li>{{"[{()}](){}"}} is valid</li>
+          <li>{{"[]{()"}} is not valid</li>
+          <li>{{"[{)]"}} is not valid</li>
+        </ul>
+    </div>
+    <div class="brackets__form">
+      <form [formGroup]="bracketsForm" (ngSubmit)="onSubmit()">
+        <input placeholder="enter in this field some brackets" type="text" formControlName="data" />
+        <button type="submit">Validate</button>
+      </form>
+    </div>
+    <div class="brackets__result">
+      <p>Result: <span [class]="isValid ? 'brackets-valid' : 'brackets-invalid'" >{{result}}</span></p>
+    </div>
+  </div>
+
+</div>

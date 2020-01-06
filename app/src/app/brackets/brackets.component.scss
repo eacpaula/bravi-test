@@ -1,0 +1,92 @@
+.brackets{
+  background-image: url(/../../assets/css/img/bg__brackets.png);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  min-height: calc(100vh - 74px);
+  .container{
+    padding: 15px;
+    .brackets__header{
+      margin-bottom: 20px;
+      h1{
+        color: #000;
+        margin-bottom: 0px;
+        span{
+          color: #2ad0d2;
+        }
+      }
+      p{
+        color: #141414;
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: 500;
+      }
+    }
+  }
+  .brackets__form {
+    input{
+      height: 32px;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #c1bbbb;
+      font-size: 17px;
+      outline: none;
+    }
+    button{
+      height: 54px;
+      background: #57d0d3;
+      border: 0px;
+      font-size: 17px;
+      color: #000;
+      padding: 15px;
+      outline: none;
+    }
+  }
+  .brackets__result{
+    p{
+      font-size: 26px;
+      .brackets-valid{
+        color:#269643;
+      }
+      .brackets-invalid{
+        color:red;
+      }
+    }
+
+  }
+  @media(min-width:568px){
+    .brackets__header{
+      width: 50%;
+      h1{
+        font-size: 86px;
+      }
+    }
+    .brackets__form {
+      input{
+        width: 44%;
+        border-radius: 10px 0px 0px 10px;
+      }
+      button{
+        border-radius: 0px 10px 10px 0px;
+      }
+    }
+  }
+  @media(max-width:568px){
+    .brackets__header{
+      h1{
+        font-size: 50px;
+      }
+    }
+    .brackets__form {
+      input{
+        border-radius: 10px;
+        width: 90%;
+        margin-bottom: 10px;;
+      }
+      button{
+        width: 99%;
+        border-radius: 10px;
+      }
+    }
+  }
+}

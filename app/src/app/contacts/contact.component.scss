@@ -1,0 +1,21 @@
+.contact{
+  h2{
+    color: #3fa02e;
+    font-size: 32px;
+  }
+  .table-responsive{
+    table{
+      width: 648px;
+      margin: 30px 0px;
+      box-shadow: none;
+      border: 1px solid #ddd;
+      th{
+        font-size: 18px;
+        color: #000;
+      }
+      td{
+        font-size: 16px;
+      }
+    }
+  }
+}

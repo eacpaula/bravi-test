@@ -1,0 +1,144 @@
+.person{
+  .container{
+    padding: 15px;
+  .person__header{
+      margin-bottom: 20px;
+      h1{
+        color: #000;
+        margin-bottom: 0px;
+        span{
+          color: #ff7a3c;
+        }
+      }
+      p{
+        color: #141414;
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: 500;
+      }
+  }
+  .person--flex{
+    display: flex;
+    flex-wrap: wrap;
+
+    .person__actions{
+      text-align: right;
+      button{
+        font-size: 30px;
+        background-color: #1030e0;
+        padding: 10px 15px;
+        border: 0px;
+        border-radius: 5px;
+        box-shadow: none;
+        color: #fff;
+      }
+    }
+  }
+  .person__search{
+    input{
+      height: 32px;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #c1bbbb;
+      font-size: 17px;
+      outline: none;
+      width: 44%;
+      border-radius: 10px 0px 0px 10px;
+    }
+    button{
+      height: 54px;
+      background: #ff7a3c;
+      border: 0px;
+      font-size: 17px;
+      color: #fff;
+      padding: 15px;
+      outline: none;
+      border-radius: 0px 10px 10px 0px;
+    }
+  }
+  .person__client{
+    .table-responsive{
+      table{
+        width: 100%;
+        margin: 30px 0px;
+        th{
+          font-size: 18px;
+          color: #000;
+        }
+        td{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .person__client__action{
+    button{
+      font-size: 0px;
+      border: 0px;
+      margin: 0px 5px;
+      cursor: pointer;
+    }
+    .item__view{
+      width: 30px;
+      height: 30px;
+      background: url(/../../assets/css/img/css_sprites.png) -60px -60px;
+    }
+    .item__edit{
+      width: 30px;
+      height: 30px;
+      background: url(/../../assets/css/img/css_sprites.png) -60px -10px;
+    }
+    .item__delete{
+      width: 30px;
+      height: 30px;
+      background: url(/../../assets/css/img/css_sprites.png) -10px -60px;
+    }
+  }
+    @media(min-width:568px){
+      .person__header{
+        h1{
+          font-size: 86px;
+        }
+      }
+      .person__header{
+        width: 50%;
+      }
+      .person__search{
+        input{
+          border-radius: 10px 0px 0px 10px;
+        }
+      }
+      .person--flex__item{
+        width: 50%;
+      }
+
+    }
+    @media(max-width:568px){
+      .person__header{
+        h1{
+          font-size: 36px;
+        }
+      }
+      .person__search{
+        input{
+          width: 90%;
+          border-radius: 10px 10px 10px 10px;
+        }
+        button{
+          width: 100%;
+          border-radius: 10px 10px 10px 10px;
+          margin: 10px 0px;
+        }
+      }
+      .person__client{
+        .table-responsive{
+          width: 100%;
+          overflow-y: scroll;
+          table{
+            width: 700px;
+          }
+        }
+      }
+    }
+  }
+}
