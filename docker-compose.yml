@@ -6,7 +6,7 @@ services:
             context: .
             dockerfile: ./docker/ApiDockerfile
         image: nodejs
-        container_name: api
+        container_name: bravi_api
         depends_on:
             - db
         restart: unless-stopped
@@ -32,7 +32,7 @@ services:
             context: .
             dockerfile: ./docker/AppDockerfile
         image: nodejs
-        container_name: app
+        container_name: bravi_app
         depends_on:
             - api
         restart: unless-stopped
@@ -49,7 +49,7 @@ services:
 
     db:
         image: mongo
-        container_name: db
+        container_name: bravi_db
         restart: unless-stopped
         env_file: .env
         environment:
